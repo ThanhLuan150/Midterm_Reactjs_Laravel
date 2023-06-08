@@ -1,4 +1,5 @@
 import React from 'react';
+import'../style/footer.css'
 function Footer() {
   return (
     <div className="footer">
@@ -6,8 +7,7 @@ function Footer() {
         <div className="row">
           <div className="col-xs-12 col-md-6 col-xl-4 footer-click footer-1">
             <h4 className="title-menu">Về chúng tôi</h4>
-            <img src="//theme.hstatic.net/200000610091/1000969627/14/logo-footer.png?v=429"width="300"height="64"/><br></br><br></br>
-            <p className="content">Cosmetics Thành Luân chuyên phân phối mỹ phẩm chính hãng, uy tín, số lượng lớn với nhiều chương trình ưu đãi đặc biệt dành cho khách hàng.</p>
+            <img src="https://laz-img-cdn.alicdn.com/images/ims-web/TB1T7K2d8Cw3KVjSZFuXXcAOpXa.png"width="300"height="64"/><br></br><br></br>
             <div className="single-contact">
               <i className="fa fa-map-marker-alt"></i>
               <div className="content"> Địa chỉ:
