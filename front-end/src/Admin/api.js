@@ -68,7 +68,6 @@ class ShowProduct extends React.Component  {
           promotion_price: $("#inputPromotionPrice").val(),
           image: $("#inputImage").val().split("\\")[2],
           unit: $("#inputUnit").val(),
-          new: $("#inputNew").val(),
         };
       
         try {
@@ -130,8 +129,7 @@ class ShowProduct extends React.Component  {
             unit_price: $("#editPrice").val(),								
             promotion_price: $("#editPromotionPrice").val(),								
             image: image,								
-            unit: $("#editUnit").val(),								
-            new: $("#editNew").val(),								
+            unit: $("#editUnit").val(),															
         })								
         .then(() => {								
             $("#editImage").val("")								
@@ -324,18 +322,6 @@ class ShowProduct extends React.Component  {
     />								
     </div>								
     <div className="form-group">								
-    <label htmlFor="inputNew">New</label>								
-    <input								
-    type="number"								
-    min={0}								
-    className="form-control"								
-    name="inputNew"								
-    id="inputNew"								
-    placeholder="Enter new"								
-    required								
-    />								
-    </div>								
-    <div className="form-group">								
     <label htmlFor="inputType">Type</label>								
     <input								
     type="number"								
@@ -471,19 +457,7 @@ class ShowProduct extends React.Component  {
     placeholder="Enter unit"								
     required								
     />								
-    </div>								
-    <div className="form-group">								
-    <label htmlFor="editNew">New</label>								
-    <input								
-    type="number"								
-    min={0}								
-    className="form-control"								
-    name="editNew"								
-    id="editNew"								
-    placeholder="Enter new"								
-    required								
-    />								
-    </div>								
+    </div>															
     <div className="form-group">								
     <label htmlFor="editType">Type</label>								
     <input								

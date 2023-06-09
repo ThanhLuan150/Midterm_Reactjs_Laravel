@@ -2,7 +2,9 @@
 			
 			namespace App\Http\Controllers;		
 					
-			use App\Models\Product;		
+			use App\Models\Product;
+			use App\Models\product_lazadas;
+			use App\Models\products;
 			use Illuminate\Http\Request;		
 			use Illuminate\Support\Facades\File;		
 					
@@ -10,31 +12,29 @@
 			{		
 			public function getProducts()		
 			{		
-			$products = Product::all();		
+			$products = product_lazadas::all();		
 			return response()->json($products);		
 			}		
 			public function getOneProduct($id)		
 			{		
-			$product = Product::find($id);		
+			$product = product_lazadas::find($id);		
 			return response()->json($product);		
 			}		
 			public function addProduct(Request $request)		
 			{		
-			$product = new Product();		
+			$product = new product_lazadas();		
 			$product->name = $request->input('name');		
 			$product->image = $request->input('image');		
 			$product->description = $request->input('description');		
 			$product->unit_price = intval($request->input('unit_price'));		
 			$product->promotion_price = intval($request->input('promotion_price'));		
-			$product->unit = $request->input('unit');		
-			$product->new = intval($request->input('new'));		
-			$product->id_type = intval($request->input('id_type'));		
+				
 			$product->save();		
 			return $product;		
 			}		
 			public function deleteProduct($id)		
 			{		
-			$product = Product::find($id);		
+			$product = product_lazadas::find($id);		
 			$fileName = 'source/image/product/' . $product->image;		
 			if (File::exists($fileName)) {		
 			File::delete($fileName);		
@@ -44,7 +44,7 @@
 			}		
 			public function editProduct(Request $request, $id)		
 			{		
-			$product = Product::find($id);		
+			$product = product_lazadas::find($id);		
 					
 			$product->name = $request->input('name');		
 			$product->image = $request->input('image');		
@@ -52,7 +52,6 @@
 			$product->unit_price = intval($request->input('unit_price'));		
 			$product->promotion_price = intval($request->input('promotion_price'));		
 			$product->unit = $request->input('unit');		
-			$product->new = intval($request->input('new'));		
 			$product->id_type = intval($request->input('id_type'));		
 					
 			$product->save();		
@@ -66,7 +65,7 @@
 			$file = $request->file('uploadImage');		
 			$fileName = $file->getClientOriginalName();		
 					
-			$file->move('source/image/product', $fileName);		
+			$file->move('source/image/lazada', $fileName);		
 					
 			return response()->json(["message" => "ok"]);		
 			} else return response()->json(["message" => "false"]);		

@@ -30,7 +30,7 @@ const Show = () => {
         {searchResults.map((e) => (
           <div className="col-md-3" key={e.id}>
             <div className="card">
-              <img src={e.image} alt={e.name} className="card-img-top" />
+              <img src={`http://localhost:8000/source/image/product/${e.image}`} alt={e.name} className="card-img-top" />
               <div className="card-body">
                 <h4 className="card-title">{e.name}</h4>
                 <p className="card-text">{e.description}</p>
